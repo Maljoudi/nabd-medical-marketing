@@ -1,196 +1,178 @@
 <!doctype html>
 <!--
-  موقع: نبض · للتسويق الطبي  (علامة تجارية مملوكة لمؤسسة رشا القصاب للتسويق الرقمي)
-  Landing عربي RTL — تسويق رقمي متخصّص للأطباء والعيادات.
-  الصور: Pexels (ترخيص مجاني للاستخدام التجاري) — يُفضّل استبدالها بأعمال حقيقية.
+  نبض · للتسويق الطبي — Nabd · Healthcare Marketing
+  موقع ثنائي اللغة (عربي / English) مع زر تبديل يقلب اللغة والاتجاه والخط.
+  علامة تجارية مملوكة لمؤسسة رشا القصاب للتسويق الرقمي.
+  الصور: Pexels (ترخيص مجاني تجاري) — يُفضّل استبدالها بأعمال حقيقية.
 -->
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>نبض · للتسويق الطبي — تسويق رقمي متخصّص للأطباء والعيادات</title>
-  <meta name="description" content="نبض — إدارة سوشيال ميديا، حملات إعلانية، وتصوير احترافي، بخبرة مركّزة على القطاع الطبي وحده." />
+  <title data-ar="نبض · للتسويق الطبي — تسويق رقمي متخصّص للأطباء والعيادات" data-en="Nabd · Healthcare Marketing — Digital marketing for doctors & clinics">نبض · للتسويق الطبي — تسويق رقمي متخصّص للأطباء والعيادات</title>
+  <meta name="description" content="نبض — إدارة سوشيال ميديا، حملات إعلانية، وتصوير احترافي، بخبرة مركّزة على القطاع الطبي." />
   <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* ─── tokens ───────────────────────────────────────────────────────── */
     :root {
-      --bg:      #fbfbf9;
-      --surface: #ffffff;
-      --fg:      #16211f;
-      --muted:   #626a67;
-      --border:  #e6e8e4;
-      --accent:  #0f766e;
-
+      --bg:#fbfbf9; --surface:#ffffff; --fg:#16211f; --muted:#626a67;
+      --border:#e6e8e4; --accent:#0f766e;
       --accent-soft: color-mix(in oklch, var(--accent) 12%, transparent);
-      --fg-soft:     color-mix(in oklch, var(--fg) 5%, transparent);
-
-      --font-display: 'Cairo', system-ui, 'Segoe UI', Tahoma, sans-serif;
-      --font-body:    'Cairo', system-ui, 'Segoe UI', Tahoma, sans-serif;
-
+      --fg-soft: color-mix(in oklch, var(--fg) 5%, transparent);
+      --font-display:'Cairo', system-ui, 'Segoe UI', Tahoma, sans-serif;
+      --font-body:'Cairo', system-ui, 'Segoe UI', Tahoma, sans-serif;
       --fs-h1: clamp(36px, 5vw, 60px);
       --fs-h2: clamp(28px, 3.6vw, 44px);
-      --fs-h3: 21px;
-      --fs-lead: 19px;
-      --fs-body: 16px;
-      --fs-meta: 13px;
-
-      --gap-sm: 12px;
-      --gap-md: 20px;
-      --gap-lg: 32px;
-      --gap-xl: 56px;
-      --gap-2xl: 96px;
-      --container: 1120px;
-      --gutter: 32px;
-
-      --radius: 10px;
-      --radius-lg: 16px;
+      --fs-h3: 21px; --fs-lead: 19px; --fs-body: 16px; --fs-meta: 13px;
+      --gap-sm:12px; --gap-md:20px; --gap-lg:32px; --gap-xl:56px; --gap-2xl:96px;
+      --container:1120px; --gutter:32px; --radius:10px; --radius-lg:16px;
     }
+    /* English: switch to a Latin type family + LTR polish */
+    html[lang="en"] {
+      --font-display:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+    html[lang="en"] body, html[lang="en"] .lead { line-height: 1.6; }
+    html[lang="en"] h1, html[lang="en"] h2 { letter-spacing: -0.02em; }
+    html[lang="en"] .eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; }
 
     /* ─── reset & base ─────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
-      margin: 0; background: var(--bg); color: var(--fg);
-      font-family: var(--font-body); font-size: var(--fs-body);
-      line-height: 1.7; letter-spacing: normal;
-      text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family:var(--font-body); font-size:var(--fs-body);
+      line-height:1.7; letter-spacing:normal;
+      text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
     }
-    img, svg { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
-    p { text-wrap: pretty; }
-    h1, h2, h3, h4 { text-wrap: balance; letter-spacing: normal; }
+    img, svg { display:block; max-width:100%; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; cursor:pointer; }
+    p { text-wrap:pretty; }
+    h1,h2,h3,h4 { text-wrap:balance; letter-spacing:normal; }
 
-    /* ─── layout primitives ────────────────────────────────────────────── */
-    .container { max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+    /* ─── layout ───────────────────────────────────────────────────────── */
+    .container { max-width:var(--container); margin-inline:auto; padding-inline:var(--gutter); }
     .section { padding-block: clamp(56px, 8vw, var(--gap-2xl)); }
-    .section + .section { border-top: 1px solid var(--border); }
-    .stack { display: flex; flex-direction: column; }
-    .stack > * + * { margin-top: var(--gap-md); }
-    .row-between { display: flex; align-items: center; justify-content: space-between; gap: var(--gap-md); }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap-xl); }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-lg); }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap-md); }
-    @media (max-width: 920px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+    .section + .section { border-top:1px solid var(--border); }
+    .stack { display:flex; flex-direction:column; }
+    .stack > * + * { margin-top:var(--gap-md); }
+    .row { display:flex; align-items:center; gap:var(--gap-md); }
+    .row-between { display:flex; align-items:center; justify-content:space-between; gap:var(--gap-md); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--gap-xl); }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap-lg); }
+    .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap-md); }
+    @media (max-width:920px){ .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; } }
 
     /* ─── type ─────────────────────────────────────────────────────────── */
-    .h1, h1 { font-family: var(--font-display); font-size: var(--fs-h1); line-height: 1.2; font-weight: 800; margin: 0; }
-    .h2, h2 { font-family: var(--font-display); font-size: var(--fs-h2); line-height: 1.25; font-weight: 800; margin: 0; }
-    .h3, h3 { font-size: var(--fs-h3); font-weight: 700; line-height: 1.5; margin: 0; }
-    .lead   { font-size: var(--fs-lead); line-height: 1.75; color: var(--muted); max-width: 62ch; margin: 0; }
-    .eyebrow { font-size: 13px; font-weight: 700; color: var(--accent); margin: 0 0 var(--gap-md); }
-    .meta { font-size: var(--fs-meta); color: var(--muted); }
+    .h1,h1 { font-family:var(--font-display); font-size:var(--fs-h1); line-height:1.2; font-weight:800; margin:0; }
+    .h2,h2 { font-family:var(--font-display); font-size:var(--fs-h2); line-height:1.25; font-weight:800; margin:0; }
+    .h3,h3 { font-size:var(--fs-h3); font-weight:700; line-height:1.5; margin:0; }
+    .lead { font-size:var(--fs-lead); line-height:1.75; color:var(--muted); max-width:62ch; margin:0; }
+    .eyebrow { font-size:13px; font-weight:700; color:var(--accent); margin:0 0 var(--gap-md); }
+    .meta { font-size:var(--fs-meta); color:var(--muted); }
 
-    /* ─── brand lockup ─────────────────────────────────────────────────── */
-    .brand { display: inline-flex; align-items: center; gap: 12px; }
-    .brand-mark { width: 40px; height: 40px; flex: 0 0 auto; }
-    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .brand-text b { font-family: var(--font-display); font-weight: 800; font-size: 21px; color: var(--fg); }
-    .brand-text i { font-style: normal; font-size: 11.5px; color: var(--muted); font-weight: 600; margin-top: 3px; }
+    /* ─── brand ────────────────────────────────────────────────────────── */
+    .brand { display:inline-flex; align-items:center; gap:12px; }
+    .brand-mark { width:40px; height:40px; flex:0 0 auto; }
+    .brand-text { display:flex; flex-direction:column; line-height:1.1; }
+    .brand-text b { font-family:var(--font-display); font-weight:800; font-size:21px; color:var(--fg); }
+    .brand-text i { font-style:normal; font-size:11.5px; color:var(--muted); font-weight:600; margin-top:3px; }
 
-    /* ─── chrome: nav + footer ─────────────────────────────────────────── */
-    .topnav {
-      position: sticky; top: 0; z-index: 10;
-      background: color-mix(in oklch, var(--bg) 90%, transparent);
-      backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
-    }
-    .topnav-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 12px; gap: var(--gap-lg); }
-    .topnav nav { display: flex; gap: var(--gap-lg); }
-    .topnav nav a { font-size: 15px; color: var(--muted); font-weight: 500; }
-    .topnav nav a:hover { color: var(--fg); }
-    @media (max-width: 880px) { .topnav nav { display: none; } }
-    .pagefoot { padding-block: var(--gap-xl); color: var(--muted); font-size: 14px; }
+    /* ─── nav + footer ─────────────────────────────────────────────────── */
+    .topnav { position:sticky; top:0; z-index:10; background:color-mix(in oklch, var(--bg) 90%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+    .topnav-inner { display:flex; align-items:center; justify-content:space-between; padding-block:12px; gap:var(--gap-md); }
+    .topnav nav { display:flex; gap:var(--gap-lg); }
+    .topnav nav a { font-size:15px; color:var(--muted); font-weight:500; }
+    .topnav nav a:hover { color:var(--fg); }
+    .nav-actions { display:flex; align-items:center; gap:12px; }
+    @media (max-width:880px){ .topnav nav { display:none; } }
+    @media (max-width:520px){ .cta-nav { display:none; } }
+    .pagefoot { padding-block:var(--gap-xl); color:var(--muted); font-size:14px; }
 
     /* ─── buttons ──────────────────────────────────────────────────────── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px;
-      border-radius: var(--radius); border: 1px solid transparent;
-      font-size: 15px; font-weight: 700;
-      transition: transform 0.05s ease, background 0.15s ease, border-color 0.15s ease;
-    }
-    .btn:active { transform: translateY(1px); }
-    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .btn-primary:hover { background: color-mix(in oklch, var(--accent) 88%, black); }
-    .btn-secondary { background: transparent; color: var(--fg); border-color: var(--border); }
-    .btn-secondary:hover { border-color: var(--fg); }
-    .btn-lg { padding: 15px 30px; font-size: 16px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:var(--radius); border:1px solid transparent; font-size:15px; font-weight:700; transition:transform .05s ease, background .15s ease, border-color .15s ease; }
+    .btn:active { transform:translateY(1px); }
+    .btn-primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+    .btn-primary:hover { background:color-mix(in oklch, var(--accent) 88%, black); }
+    .btn-secondary { background:transparent; color:var(--fg); border-color:var(--border); }
+    .btn-secondary:hover { border-color:var(--fg); }
+    .btn-lg { padding:15px 30px; font-size:16px; }
+    .btn-lang { display:inline-flex; align-items:center; gap:7px; padding:9px 14px; border:1px solid var(--border); border-radius:var(--radius); background:transparent; color:var(--fg); font-weight:700; font-size:14px; }
+    .btn-lang:hover { border-color:var(--fg); }
+    .btn-lang svg { width:16px; height:16px; color:var(--muted); }
 
     /* ─── card / media ─────────────────────────────────────────────────── */
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
-    .media { border-radius: var(--radius-lg); overflow: hidden; background: var(--fg-soft); }
-    .media img { width: 100%; height: 100%; object-fit: cover; }
-    .media.ar-45 { aspect-ratio: 4 / 5; }
-    .media.ar-43 { aspect-ratio: 4 / 3; }
-    .media.ar-1610 { aspect-ratio: 16 / 10; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; }
+    .media { border-radius:var(--radius-lg); overflow:hidden; background:var(--fg-soft); }
+    .media img { width:100%; height:100%; object-fit:cover; }
+    .media.ar-45 { aspect-ratio:4/5; }
+    .media.ar-43 { aspect-ratio:4/3; }
+    .media.ar-1610 { aspect-ratio:16/10; }
 
-    /* ─── feature / service card ───────────────────────────────────────── */
-    .feature h3 { margin-bottom: 10px; }
-    .feature p  { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.75; }
-    .feature .media { border-radius: 12px; margin-bottom: 20px; }
+    /* ─── feature / list / step ────────────────────────────────────────── */
+    .feature h3 { margin-bottom:10px; }
+    .feature p { margin:0; color:var(--muted); font-size:15.5px; line-height:1.75; }
+    .feature .media { border-radius:12px; margin-bottom:20px; }
+    .checklist { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; color:var(--fg); font-size:16.5px; line-height:1.7; }
+    .checklist svg { flex:0 0 auto; width:22px; height:22px; color:var(--accent); margin-top:4px; }
+    .step-num { width:46px; height:46px; display:grid; place-items:center; border-radius:50%; background:var(--accent-soft); color:var(--accent); font-weight:800; font-size:19px; margin-bottom:var(--gap-md); }
+    .step h3 { margin-bottom:8px; }
+    .step p { margin:0; color:var(--muted); font-size:15.5px; line-height:1.7; }
 
-    /* ─── check list ───────────────────────────────────────────────────── */
-    .checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
-    .checklist li { display: flex; gap: 12px; align-items: flex-start; color: var(--fg); font-size: 16.5px; line-height: 1.7; }
-    .checklist svg { flex: 0 0 auto; width: 22px; height: 22px; color: var(--accent); margin-top: 4px; }
-
-    /* ─── process step ─────────────────────────────────────────────────── */
-    .step-num { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 800; font-size: 19px; margin-bottom: var(--gap-md); }
-    .step h3 { margin-bottom: 8px; }
-    .step p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.7; }
-
-    /* ─── form field ───────────────────────────────────────────────────── */
-    .field { display: flex; flex-direction: column; gap: 6px; }
-    .field label { font-size: 14px; color: var(--muted); font-weight: 500; }
-    .input, .textarea {
-      width: 100%; padding: 13px 16px; border: 1px solid var(--border);
-      border-radius: var(--radius); background: var(--surface); color: var(--fg);
-      font: inherit; font-size: 15px;
-    }
-    .input:focus, .textarea:focus { outline: 2px solid var(--accent-soft); border-color: var(--accent); }
-    .textarea { min-height: 110px; resize: vertical; line-height: 1.7; }
-
-    /* ─── contact info line ────────────────────────────────────────────── */
-    .info-line { display: flex; gap: 14px; align-items: center; padding-block: 16px; border-bottom: 1px solid var(--border); }
-    .info-line:last-child { border-bottom: 0; }
-    .info-line .ic { flex: 0 0 auto; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 10px; background: var(--accent-soft); color: var(--accent); }
-    .info-line .ic svg { width: 20px; height: 20px; }
-    .info-line b { display: block; font-size: 15.5px; font-weight: 700; }
-    .info-line span { color: var(--muted); font-size: 14px; }
+    /* ─── form / contact ───────────────────────────────────────────────── */
+    .field { display:flex; flex-direction:column; gap:6px; }
+    .field label { font-size:14px; color:var(--muted); font-weight:500; }
+    .input, .textarea { width:100%; padding:13px 16px; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); color:var(--fg); font:inherit; font-size:15px; }
+    .input:focus, .textarea:focus { outline:2px solid var(--accent-soft); border-color:var(--accent); }
+    .textarea { min-height:110px; resize:vertical; line-height:1.7; }
+    .info-line { display:flex; gap:14px; align-items:center; padding-block:16px; border-bottom:1px solid var(--border); }
+    .info-line:last-child { border-bottom:0; }
+    .info-line .ic { flex:0 0 auto; width:42px; height:42px; display:grid; place-items:center; border-radius:10px; background:var(--accent-soft); color:var(--accent); }
+    .info-line .ic svg { width:20px; height:20px; }
+    .info-line b { display:block; font-size:15.5px; font-weight:700; }
+    .info-line span { color:var(--muted); font-size:14px; }
 
     /* ─── hero ─────────────────────────────────────────────────────────── */
-    .hero { padding-block: clamp(48px, 8vw, 104px); position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(55% 70% at 80% 0%, var(--accent-soft), transparent 70%); pointer-events: none; }
-    .hero-split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--gap-2xl); align-items: center; position: relative; }
-    @media (max-width: 920px) { .hero-split { grid-template-columns: 1fr; gap: var(--gap-xl); } }
-    .hero h1 { margin-bottom: var(--gap-md); }
-    .hero .lead { margin-bottom: var(--gap-lg); }
-    .hero-cta { display: inline-flex; gap: var(--gap-sm); flex-wrap: wrap; }
-    .hero-trust { margin-top: var(--gap-lg); font-size: 14px; color: var(--muted); max-width: 46ch; }
-
-    /* ─── section head ─────────────────────────────────────────────────── */
-    .rule { border: 0; border-top: 1px solid var(--border); margin: 0; }
+    .hero { padding-block: clamp(48px, 8vw, 104px); position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(55% 70% at 80% 0%, var(--accent-soft), transparent 70%); pointer-events:none; }
+    html[lang="en"] .hero::before { background:radial-gradient(55% 70% at 20% 0%, var(--accent-soft), transparent 70%); }
+    .hero-split { display:grid; grid-template-columns:1.05fr 0.95fr; gap:var(--gap-2xl); align-items:center; position:relative; }
+    @media (max-width:920px){ .hero-split { grid-template-columns:1fr; gap:var(--gap-xl); } }
+    .hero h1 { margin-bottom:var(--gap-md); }
+    .hero .lead { margin-bottom:var(--gap-lg); }
+    .hero-cta { display:inline-flex; gap:var(--gap-sm); flex-wrap:wrap; }
+    .hero-trust { margin-top:var(--gap-lg); font-size:14px; color:var(--muted); max-width:48ch; }
+    .rule { border:0; border-top:1px solid var(--border); margin:0; }
   </style>
 </head>
 <body>
 
   <header class="topnav" data-od-id="topnav">
     <div class="container topnav-inner">
-      <a href="#" class="brand" aria-label="نبض للتسويق الطبي">
+      <a href="#" class="brand" aria-label="نبض">
         <span class="brand-mark"><img src="assets/logo-mark.svg" alt="" width="40" height="40"></span>
-        <span class="brand-text"><b>نبض</b><i>للتسويق الطبي</i></span>
+        <span class="brand-text"><b data-ar="نبض" data-en="Nabd">نبض</b><i data-ar="للتسويق الطبي" data-en="Healthcare Marketing">للتسويق الطبي</i></span>
       </a>
       <nav>
-        <a href="#services">خدماتنا</a>
-        <a href="#why">لماذا نحن</a>
-        <a href="#process">آلية العمل</a>
-        <a href="#contact">تواصل معنا</a>
+        <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+        <a href="#why" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</a>
+        <a href="#process" data-ar="آلية العمل" data-en="Process">آلية العمل</a>
+        <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
       </nav>
-      <a href="#contact" class="btn btn-primary">احجز استشارة مجانية</a>
+      <div class="nav-actions">
+        <button id="langBtn" class="btn-lang" type="button" aria-label="Switch language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21C9.5 18.5 8.2 15.3 8.2 12S9.5 5.5 12 3z"/></svg>
+          <span id="langLabel">EN</span>
+        </button>
+        <a href="#contact" class="btn btn-primary cta-nav" data-ar="احجز استشارة مجانية" data-en="Book a free consultation">احجز استشارة مجانية</a>
+      </div>
     </div>
   </header>
 
@@ -200,14 +182,14 @@
     <section class="section hero" data-od-id="hero">
       <div class="container hero-split">
         <div>
-          <p class="eyebrow">تسويق رقمي متخصّص للأطباء والعيادات</p>
-          <h1>نُدير تسويقك الرقمي، وأنت تتفرّغ لمرضاك</h1>
-          <p class="lead">إدارة كاملة لحسابات التواصل الاجتماعي، حملات إعلانية مدروسة، وتصوير طبي احترافي — بخبرةٍ مركّزة على القطاع الطبي وحده.</p>
+          <p class="eyebrow" data-ar="تسويق رقمي متخصّص للأطباء والعيادات" data-en="Digital marketing built for doctors & clinics">تسويق رقمي متخصّص للأطباء والعيادات</p>
+          <h1 data-ar="نُدير تسويقك الرقمي، وأنت تتفرّغ لمرضاك" data-en="We run your marketing, so you can focus on your patients">نُدير تسويقك الرقمي، وأنت تتفرّغ لمرضاك</h1>
+          <p class="lead" data-ar="إدارة كاملة لحسابات التواصل الاجتماعي، حملات إعلانية مدروسة، وتصوير طبي احترافي — بخبرةٍ مركّزة على القطاع الطبي وحده." data-en="Full social media management, data-driven ad campaigns, and professional medical photography — with expertise focused on healthcare alone.">إدارة كاملة لحسابات التواصل الاجتماعي، حملات إعلانية مدروسة، وتصوير طبي احترافي — بخبرةٍ مركّزة على القطاع الطبي وحده.</p>
           <div class="hero-cta">
-            <a href="#contact" class="btn btn-primary btn-lg">احجز استشارة مجانية</a>
-            <a href="#services" class="btn btn-secondary btn-lg">تصفّح خدماتنا</a>
+            <a href="#contact" class="btn btn-primary btn-lg" data-ar="احجز استشارة مجانية" data-en="Book a free consultation">احجز استشارة مجانية</a>
+            <a href="#services" class="btn btn-secondary btn-lg" data-ar="تصفّح خدماتنا" data-en="Explore services">تصفّح خدماتنا</a>
           </div>
-          <p class="hero-trust">نعمل مع العيادات والأطباء في مختلف التخصّصات — من التجميل والأسنان إلى الجلدية والعامة.</p>
+          <p class="hero-trust" data-ar="نعمل مع العيادات والأطباء في مختلف التخصّصات — من التجميل والأسنان إلى الجلدية والعامة." data-en="We work with clinics and doctors across specialties — from aesthetics and dental to dermatology and general practice.">نعمل مع العيادات والأطباء في مختلف التخصّصات — من التجميل والأسنان إلى الجلدية والعامة.</p>
         </div>
         <div class="media ar-45">
           <img src="assets/hero-doctor.jpg" alt="طبيبة في عيادة حديثة" />
@@ -217,93 +199,77 @@
 
     <!-- ── الخدمات ────────────────────────────────────────────────────── -->
     <section class="section" id="services" data-od-id="services">
-      <div class="container stack" style="gap: 56px;">
-        <div style="max-width: 46ch;">
-          <p class="eyebrow">خدماتنا</p>
-          <h2>ثلاث خدمات تُغطّي حضورك الرقمي بالكامل</h2>
+      <div class="container stack" style="gap:56px;">
+        <div style="max-width:46ch;">
+          <p class="eyebrow" data-ar="خدماتنا" data-en="Services">خدماتنا</p>
+          <h2 data-ar="ثلاث خدمات تُغطّي حضورك الرقمي بالكامل" data-en="Three services that cover your entire digital presence">ثلاث خدمات تُغطّي حضورك الرقمي بالكامل</h2>
         </div>
         <div class="grid-3">
-
           <div class="feature card">
-            <div class="media ar-1610"><img src="assets/service-social.jpg" alt="إدارة السوشيال ميديا" /></div>
-            <h3>إدارة السوشيال ميديا</h3>
-            <p>إدارة يومية لحساباتك على إنستغرام وسناب شات وتيك توك: تخطيط المحتوى، التصميم، النشر، والردّ على المرضى — بهويةٍ بصرية ثابتة تليق باسم عيادتك.</p>
+            <div class="media ar-1610"><img src="assets/service-social.jpg" alt="Social media" /></div>
+            <h3 data-ar="إدارة السوشيال ميديا" data-en="Social Media Management">إدارة السوشيال ميديا</h3>
+            <p data-ar="إدارة يومية لحساباتك على إنستغرام وسناب شات وتيك توك: تخطيط المحتوى، التصميم، النشر، والردّ على المرضى — بهويةٍ بصرية ثابتة تليق باسم عيادتك." data-en="Daily management of your Instagram, Snapchat, and TikTok accounts: content planning, design, publishing, and replying to patients — with a consistent visual identity worthy of your clinic.">إدارة يومية لحساباتك على إنستغرام وسناب شات وتيك توك: تخطيط المحتوى، التصميم، النشر، والردّ على المرضى — بهويةٍ بصرية ثابتة تليق باسم عيادتك.</p>
           </div>
-
           <div class="feature card">
-            <div class="media ar-1610"><img src="assets/service-ads.jpg" alt="الحملات الإعلانية" /></div>
-            <h3>الحملات الإعلانية</h3>
-            <p>حملات موجّهة لجمهورك في منطقتك، مبنية على هدفٍ واضح: حجوزات أكثر، لا مجرّد إعجابات. إعدادٌ دقيق للاستهداف ومتابعة وتحسين مستمر للنتائج.</p>
+            <div class="media ar-1610"><img src="assets/service-ads.jpg" alt="Ad campaigns" /></div>
+            <h3 data-ar="الحملات الإعلانية" data-en="Ad Campaigns">الحملات الإعلانية</h3>
+            <p data-ar="حملات موجّهة لجمهورك في منطقتك، مبنية على هدفٍ واضح: حجوزات أكثر، لا مجرّد إعجابات. إعدادٌ دقيق للاستهداف ومتابعة وتحسين مستمر للنتائج." data-en="Targeted campaigns for your local audience, built on a clear goal: more bookings, not just likes. Precise targeting with continuous tracking and optimization.">حملات موجّهة لجمهورك في منطقتك، مبنية على هدفٍ واضح: حجوزات أكثر، لا مجرّد إعجابات. إعدادٌ دقيق للاستهداف ومتابعة وتحسين مستمر للنتائج.</p>
           </div>
-
           <div class="feature card">
-            <div class="media ar-1610"><img src="assets/service-photo.jpg" alt="التصوير والإنتاج" /></div>
-            <h3>التصوير والإنتاج</h3>
-            <p>تصوير احترافي للعيادة والطاقم والإجراءات — صورٌ وفيديوهات تعرض خدماتك بمصداقية، وتبني ثقة المريض قبل أن يطأ باب العيادة.</p>
+            <div class="media ar-1610"><img src="assets/service-photo.jpg" alt="Photography" /></div>
+            <h3 data-ar="التصوير والإنتاج" data-en="Photography & Production">التصوير والإنتاج</h3>
+            <p data-ar="تصوير احترافي للعيادة والطاقم والإجراءات — صورٌ وفيديوهات تعرض خدماتك بمصداقية، وتبني ثقة المريض قبل أن يطأ باب العيادة." data-en="Professional photography of your clinic, team, and procedures — photos and videos that present your services credibly and build patient trust before they arrive.">تصوير احترافي للعيادة والطاقم والإجراءات — صورٌ وفيديوهات تعرض خدماتك بمصداقية، وتبني ثقة المريض قبل أن يطأ باب العيادة.</p>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- ── لماذا نحن ──────────────────────────────────────────────────── -->
     <section class="section" id="why" data-od-id="why">
-      <div class="container grid-2" style="align-items: center;">
+      <div class="container grid-2" style="align-items:center;">
         <div>
-          <p class="eyebrow">لماذا نحن</p>
-          <h2 style="margin-bottom: 28px;">تسويقٌ يفهم لغة القطاع الطبي</h2>
+          <p class="eyebrow" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</p>
+          <h2 style="margin-bottom:28px;" data-ar="تسويقٌ يفهم لغة القطاع الطبي" data-en="Marketing that speaks the language of healthcare">تسويقٌ يفهم لغة القطاع الطبي</h2>
           <ul class="checklist">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              <span>متخصّصون في تسويق العيادات والأطباء — لا نشتّت جهدنا في كل المجالات.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              <span>نلتزم بالذوق المهني وحدود الإعلان الطبي، بلا مبالغاتٍ تضرّ بسمعتك.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              <span>محتوى يبني ثقة المريض ويشرح خدماتك بلغةٍ بسيطة ومطمئنة.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              <span>تقارير شهرية واضحة تعرف من خلالها أين تُصرَف ميزانيتك وماذا حقّقت.</span>
-            </li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="متخصّصون في تسويق العيادات والأطباء — لا نشتّت جهدنا في كل المجالات." data-en="Specialized in marketing for clinics and doctors — we don't spread ourselves thin across every industry.">متخصّصون في تسويق العيادات والأطباء — لا نشتّت جهدنا في كل المجالات.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="نلتزم بالذوق المهني وحدود الإعلان الطبي، بلا مبالغاتٍ تضرّ بسمعتك." data-en="We respect professional taste and the limits of medical advertising — no exaggerations that harm your reputation.">نلتزم بالذوق المهني وحدود الإعلان الطبي، بلا مبالغاتٍ تضرّ بسمعتك.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="محتوى يبني ثقة المريض ويشرح خدماتك بلغةٍ بسيطة ومطمئنة." data-en="Content that builds patient trust and explains your services in simple, reassuring language.">محتوى يبني ثقة المريض ويشرح خدماتك بلغةٍ بسيطة ومطمئنة.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ar="تقارير شهرية واضحة تعرف من خلالها أين تُصرَف ميزانيتك وماذا حقّقت." data-en="Clear monthly reports, so you know exactly where your budget goes and what it achieved.">تقارير شهرية واضحة تعرف من خلالها أين تُصرَف ميزانيتك وماذا حقّقت.</span></li>
           </ul>
         </div>
         <div class="media ar-43">
-          <img src="assets/why-clinic.jpg" alt="عيادة طبية حديثة" />
+          <img src="assets/why-clinic.jpg" alt="Modern clinic" />
         </div>
       </div>
     </section>
 
     <!-- ── آلية العمل ─────────────────────────────────────────────────── -->
     <section class="section" id="process" data-od-id="process">
-      <div class="container stack" style="gap: 56px;">
-        <div style="max-width: 48ch;">
-          <p class="eyebrow">آلية العمل</p>
-          <h2>أربع خطوات، من أول جلسة إلى نتائج على أرض الواقع</h2>
+      <div class="container stack" style="gap:56px;">
+        <div style="max-width:48ch;">
+          <p class="eyebrow" data-ar="آلية العمل" data-en="Process">آلية العمل</p>
+          <h2 data-ar="أربع خطوات، من أول جلسة إلى نتائج على أرض الواقع" data-en="Four steps, from the first call to real-world results">أربع خطوات، من أول جلسة إلى نتائج على أرض الواقع</h2>
         </div>
         <div class="grid-4">
           <div class="step">
-            <div class="step-num">١</div>
-            <h3>جلسة تعارف</h3>
-            <p>نفهم عيادتك، تخصّصك، وجمهورك المستهدف، وأهدافك من التسويق.</p>
+            <div class="step-num" data-ar="١" data-en="1">١</div>
+            <h3 data-ar="جلسة تعارف" data-en="Discovery call">جلسة تعارف</h3>
+            <p data-ar="نفهم عيادتك، تخصّصك، وجمهورك المستهدف، وأهدافك من التسويق." data-en="We learn your clinic, specialty, target audience, and marketing goals.">نفهم عيادتك، تخصّصك، وجمهورك المستهدف، وأهدافك من التسويق.</p>
           </div>
           <div class="step">
-            <div class="step-num">٢</div>
-            <h3>خطة تسويقية</h3>
-            <p>نضع خطة محتوى وحملات مبنية على أهدافك وميزانيتك، ونتّفق عليها معك.</p>
+            <div class="step-num" data-ar="٢" data-en="2">٢</div>
+            <h3 data-ar="خطة تسويقية" data-en="Marketing plan">خطة تسويقية</h3>
+            <p data-ar="نضع خطة محتوى وحملات مبنية على أهدافك وميزانيتك، ونتّفق عليها معك." data-en="We build a content and campaign plan around your goals and budget, and agree on it with you.">نضع خطة محتوى وحملات مبنية على أهدافك وميزانيتك، ونتّفق عليها معك.</p>
           </div>
           <div class="step">
-            <div class="step-num">٣</div>
-            <h3>التنفيذ</h3>
-            <p>تصوير، تصميم، نشر، وإدارة حملات — بمتابعةٍ يومية دون أن تنشغل أنت.</p>
+            <div class="step-num" data-ar="٣" data-en="3">٣</div>
+            <h3 data-ar="التنفيذ" data-en="Execution">التنفيذ</h3>
+            <p data-ar="تصوير، تصميم، نشر، وإدارة حملات — بمتابعةٍ يومية دون أن تنشغل أنت." data-en="Photography, design, publishing, and campaign management — handled daily, without taking your time.">تصوير، تصميم، نشر، وإدارة حملات — بمتابعةٍ يومية دون أن تنشغل أنت.</p>
           </div>
           <div class="step">
-            <div class="step-num">٤</div>
-            <h3>متابعة وتطوير</h3>
-            <p>تقارير دورية وقراءة للأرقام، وتحسين مستمر لما ينجح والتخلّي عمّا لا ينجح.</p>
+            <div class="step-num" data-ar="٤" data-en="4">٤</div>
+            <h3 data-ar="متابعة وتطوير" data-en="Track & improve">متابعة وتطوير</h3>
+            <p data-ar="تقارير دورية وقراءة للأرقام، وتحسين مستمر لما ينجح والتخلّي عمّا لا ينجح." data-en="Regular reports and data review, continuously improving what works and dropping what doesn't.">تقارير دورية وقراءة للأرقام، وتحسين مستمر لما ينجح والتخلّي عمّا لا ينجح.</p>
           </div>
         </div>
       </div>
@@ -313,35 +279,41 @@
     <section class="section" id="contact" data-od-id="contact">
       <div class="container grid-2">
         <div>
-          <p class="eyebrow">تواصل معنا</p>
-          <h2 style="margin-bottom: 16px;">لنبدأ بتطوير حضور عيادتك الرقمي</h2>
-          <p class="lead" style="margin-bottom: 32px;">احجز استشارة مجانية، ولنرَ معاً أين تقف عيادتك اليوم وكيف نطوّرها. نردّ عليك خلال ٢٤ ساعة عمل.</p>
+          <p class="eyebrow" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</p>
+          <h2 style="margin-bottom:16px;" data-ar="لنبدأ بتطوير حضور عيادتك الرقمي" data-en="Let's start growing your clinic's digital presence">لنبدأ بتطوير حضور عيادتك الرقمي</h2>
+          <p class="lead" style="margin-bottom:32px;" data-ar="احجز استشارة مجانية، ولنرَ معاً أين تقف عيادتك اليوم وكيف نطوّرها. نردّ عليك خلال ٢٤ ساعة عمل." data-en="Book a free consultation and let's see where your clinic stands today and how to grow it. We reply within 24 business hours.">احجز استشارة مجانية، ولنرَ معاً أين تقف عيادتك اليوم وكيف نطوّرها. نردّ عليك خلال ٢٤ ساعة عمل.</p>
 
           <div class="info-line">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-            <div><b>البريد الإلكتروني</b><span>info@nabd.sa — (يُستبدل ببريدك بعد شراء الدومين)</span></div>
+            <div>
+              <b data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</b>
+              <span data-ar="info@nabd.sa — (يُستبدل ببريدك بعد شراء الدومين)" data-en="info@nabd.sa — (replace with your address after buying the domain)">info@nabd.sa — (يُستبدل ببريدك بعد شراء الدومين)</span>
+            </div>
           </div>
           <div class="info-line">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
-            <div><b>إنستغرام</b><span>@your.handle — (يُستبدل بحسابك)</span></div>
+            <div>
+              <b data-ar="إنستغرام" data-en="Instagram">إنستغرام</b>
+              <span data-ar="‎@your.handle — (يُستبدل بحسابك)" data-en="@your.handle — (replace with your handle)">‎@your.handle — (يُستبدل بحسابك)</span>
+            </div>
           </div>
         </div>
 
-        <form class="card" id="contactForm" aria-label="نموذج التواصل">
-          <div class="stack" style="gap: 18px;">
+        <form class="card" id="contactForm" aria-label="Contact form">
+          <div class="stack" style="gap:18px;">
             <div class="field">
-              <label for="c-name">الاسم</label>
-              <input class="input" id="c-name" type="text" placeholder="اسمك أو اسم العيادة" required />
+              <label for="c-name" data-ar="الاسم" data-en="Name">الاسم</label>
+              <input class="input" id="c-name" type="text" data-ar-ph="اسمك أو اسم العيادة" data-en-ph="Your name or clinic name" placeholder="اسمك أو اسم العيادة" required />
             </div>
             <div class="field">
-              <label for="c-email">بريدك الإلكتروني</label>
-              <input class="input" id="c-email" type="email" placeholder="you@email.com" required />
+              <label for="c-email" data-ar="بريدك الإلكتروني" data-en="Your email">بريدك الإلكتروني</label>
+              <input class="input" id="c-email" type="email" data-ar-ph="you@email.com" data-en-ph="you@email.com" placeholder="you@email.com" required />
             </div>
             <div class="field">
-              <label for="c-msg">كيف نقدر نساعدك؟</label>
-              <textarea class="textarea" id="c-msg" placeholder="اكتب لنا نبذة عن عيادتك وما تحتاجه…"></textarea>
+              <label for="c-msg" data-ar="كيف نقدر نساعدك؟" data-en="How can we help?">كيف نقدر نساعدك؟</label>
+              <textarea class="textarea" id="c-msg" data-ar-ph="اكتب لنا نبذة عن عيادتك وما تحتاجه…" data-en-ph="Tell us a bit about your clinic and what you need…" placeholder="اكتب لنا نبذة عن عيادتك وما تحتاجه…"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">أرسل عبر البريد</button>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" data-ar="أرسل عبر البريد" data-en="Send via email">أرسل عبر البريد</button>
           </div>
         </form>
       </div>
@@ -351,33 +323,67 @@
 
   <footer class="pagefoot" data-od-id="footer">
     <div class="container">
-      <hr class="rule" style="margin-bottom: 32px;">
-      <div class="row-between" style="flex-wrap: wrap; gap: 16px;">
+      <hr class="rule" style="margin-bottom:32px;">
+      <div class="row-between" style="flex-wrap:wrap; gap:16px;">
         <a href="#" class="brand">
           <span class="brand-mark" style="width:34px;height:34px;"><img src="assets/logo-mark.svg" alt="" width="34" height="34"></span>
-          <span class="brand-text"><b style="font-size:18px;">نبض</b><i>للتسويق الطبي</i></span>
+          <span class="brand-text"><b style="font-size:18px;" data-ar="نبض" data-en="Nabd">نبض</b><i data-ar="للتسويق الطبي" data-en="Healthcare Marketing">للتسويق الطبي</i></span>
         </a>
-        <span class="meta" style="text-align: left;">© 2026 نبض للتسويق الطبي — جميع الحقوق محفوظة.<br>علامة تجارية مملوكة لمؤسسة رشا القصاب للتسويق الرقمي.</span>
+        <div style="text-align:end;">
+          <span class="meta" style="display:block;" data-ar="© 2026 نبض للتسويق الطبي — جميع الحقوق محفوظة." data-en="© 2026 Nabd Healthcare Marketing — All rights reserved.">© 2026 نبض للتسويق الطبي — جميع الحقوق محفوظة.</span>
+          <span class="meta" style="display:block; margin-top:4px;" data-ar="علامة تجارية مملوكة لمؤسسة رشا القصاب للتسويق الرقمي." data-en="A trademark owned by Rasha Al-Qassab Digital Marketing Est.">علامة تجارية مملوكة لمؤسسة رشا القصاب للتسويق الرقمي.</span>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    /* نموذج التواصل: يفتح بريد المستخدم برسالة جاهزة (تواصل عبر البريد فقط). */
+    /* ── تبديل اللغة عربي / English ─────────────────────────────────── */
+    (function () {
+      var STORE = 'nabd_lang';
+      function apply(lang) {
+        var html = document.documentElement;
+        html.lang = lang;
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        document.querySelectorAll('[data-ar]').forEach(function (el) {
+          var v = el.getAttribute('data-' + lang);
+          if (v !== null) el.textContent = v;
+        });
+        document.querySelectorAll('[data-ar-ph]').forEach(function (el) {
+          var v = el.getAttribute('data-' + lang + '-ph');
+          if (v !== null) el.setAttribute('placeholder', v);
+        });
+        var label = document.getElementById('langLabel');
+        if (label) label.textContent = (lang === 'ar') ? 'EN' : 'عربي';
+        try { localStorage.setItem(STORE, lang); } catch (e) {}
+      }
+      var saved = 'ar';
+      try { saved = localStorage.getItem(STORE) || 'ar'; } catch (e) {}
+      document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('langBtn');
+        if (btn) btn.addEventListener('click', function () {
+          apply(document.documentElement.lang === 'ar' ? 'en' : 'ar');
+        });
+        apply(saved);
+      });
+    })();
+
+    /* ── نموذج التواصل: يفتح بريد المستخدم برسالة جاهزة ─────────────── */
     (function () {
       var f = document.getElementById('contactForm');
       if (!f) return;
       f.addEventListener('submit', function (e) {
         e.preventDefault();
-        var to    = 'info@nabd.sa'; /* ← استبدل ببريدك الرسمي بعد شراء الدومين */
-        var name  = (document.getElementById('c-name').value || '').trim();
-        var from  = (document.getElementById('c-email').value || '').trim();
-        var msg   = (document.getElementById('c-msg').value || '').trim();
-        var subject = 'طلب استشارة من ' + (name || 'زائر الموقع');
-        var body = 'الاسم: ' + name + '\nالبريد: ' + from + '\n\nالرسالة:\n' + msg;
-        window.location.href = 'mailto:' + to +
-          '?subject=' + encodeURIComponent(subject) +
-          '&body=' + encodeURIComponent(body);
+        var to = 'info@nabd.sa'; /* ← استبدل ببريدك الرسمي بعد شراء الدومين */
+        var en = document.documentElement.lang === 'en';
+        var name = (document.getElementById('c-name').value || '').trim();
+        var from = (document.getElementById('c-email').value || '').trim();
+        var msg  = (document.getElementById('c-msg').value || '').trim();
+        var subject = (en ? 'Consultation request from ' : 'طلب استشارة من ') + (name || (en ? 'a website visitor' : 'زائر الموقع'));
+        var body = en
+          ? ('Name: ' + name + '\nEmail: ' + from + '\n\nMessage:\n' + msg)
+          : ('الاسم: ' + name + '\nالبريد: ' + from + '\n\nالرسالة:\n' + msg);
+        window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       });
     })();
   </script>
